@@ -1,3 +1,18 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+<header class="container">
+  <h1>{{#link-to 'index'}}EmberSherpa Training Workshop{{/link-to}}</h1>
+</header>
+<div class="container">
+    <div class="columns">
+        <div class="one-fifth column">
+            <nav class="menu main-menu">
+                <span class="menu-heading">Topics</span>
+              {{#each model as |section|}}
+                {{#link-to section.route classNames="menu-item" activeClass="selected"}}{{section.title}}{{/link-to}}
+              {{/each}}
+            </nav>
+        </div>
+        <div class="four-fifths column">
+          {{outlet}}
+        </div>
+    </div>
+</div>
