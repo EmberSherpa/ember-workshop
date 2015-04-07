@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import {
   module,
-  test
+  test,
+  skip
 } from 'qunit';
 import startApp from 'ember-workshop/tests/helpers/start-app';
 
@@ -22,5 +23,16 @@ test('visiting /testing/acceptance', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/testing/acceptance');
+  });
+});
+
+skip('clicking on Go button shows Great Success!', function(assert){
+  visit('/testing/acceptance');
+  andThen(function(){
+    assert.equal(find('.message').text(), '', "message is empty before Go is pressed");
+  });
+  click('button:contains("Go")');
+  andThen(function(){
+    assert.equal(find('.message').text(), 'Great Success!', "message was set after Go was pressed");
   });
 });

@@ -1,13 +1,62 @@
-<h2>Acceptance Testing</h2>
+{{testing-nav}}
+
+<p class="lead">Interactions produce expected visual results.</p>
+
+<h4>Generate</h4>
+
+{{code-snippet name="ember-generate-acceptance-test.sh"}}
+
+<hr>
+
+<h4>Example</h4>
 
 {{code-snippet name="testing-acceptance-test.js"}}
+
+<hr>
 
 <h4>Imports</h4>
 
 {{code-snippet name="testing-acceptance-test-imports.js"}}
 
+<hr>
+
+<h4>Module</h4>
+
 {{code-snippet name="testing-acceptance-test-module.js"}}
+
+<hr>
+
+<h4>startApp</h4>
 
 {{code-snippet name="testing-acceptance-test-start-app.js"}}
 
-{{code-snippet name="testing-acceptance-test/test.js"}}
+<hr>
+
+<h4>Helpers</h4>
+
+{{code-snippet name="testing-acceptance-test-helpers.js"}}
+
+<hr>
+
+<h4>Run your first test</h4>
+
+{{#if message}}
+    <span class="message">{{message}}</span>
+{{else}}
+    <button class="btn btn-primary btn-sm" type="button" {{action 'go'}}>Go</button>
+{{/if}}
+
+{{file-snippet path="templates/testing/acceptance.hbs" snippet="testing-acceptance-test-first-test.hbs"}}
+
+{{file-snippet path="controllers/testing/acceptance.js" snippet="testing-acceptance-test-first-test-controller.js"}}
+
+{{file-snippet path="tests/acceptance/testing-acceptance-test.js" snippet="testing-acceptance-test-first-test.js"}}
+
+{{#flash-message type="warn"}}
+  <ol>
+      <li>{{test-link module='Acceptance: TestingAcceptance' test='clicking on Go button shows Great Success!'}}</li>
+      <li>Make the test run by changing it from `skip` to `test`.</li>
+  </ol>
+{{/flash-message}}
+
+

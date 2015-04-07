@@ -1,3 +1,34 @@
 .tomster {
   width: 150px;
 }
+
+header h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.file-snippet {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: solid 1px #bac6d3;
+}
+
+.file-snippet .path{
+  display: block;
+  padding: 5px;
+  position: relative;
+  color: #246;
+  background-color: #e2eef9;
+}
+
+.flash ol {
+  margin-left: 20px;
+}

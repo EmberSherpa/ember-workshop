@@ -11,8 +11,8 @@ export default function startApp(attrs) {
 
   Ember.run(function() {
     application = Application.create(attributes);
-    application.setupForTesting();
-    application.injectTestHelpers();
+    application.setupForTesting(); // defer readiness, flip testing flag & disable url changes
+    application.injectTestHelpers(); // inject visit, click, andThen, triggerEvent, pauseTest
   });
 
   return application;
