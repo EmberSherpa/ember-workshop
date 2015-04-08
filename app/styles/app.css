@@ -40,3 +40,10 @@ body {
   margin-bottom: 20px;
 }
 
+img {
+  max-width: 100%;
+}
+
+.limited-width {
+  max-width: 500px;
+}

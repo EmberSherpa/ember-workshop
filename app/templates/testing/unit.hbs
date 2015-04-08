@@ -1,4 +1,102 @@
 {{testing-nav}}
 
-<h2>Unit Testing</h2>
+<p class="lead">Test an individual unit of functionality.</p>
 
+<hr>
+
+<h3>Generate a unit test</h3>
+
+{{code-snippet name="ember-generate-unit-test.sh"}}
+
+<p>Also, units generate corresponding unit tests.</p>
+
+{{code-snippet name="ember-generate-service.sh"}}
+
+<p>
+    <img src="/images/ember-generate-service.png" class="limited-width">
+</p>
+
+{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-reminder-service-test-basic.js"}}
+
+<hr>
+
+<h3>Container: types and singletons</h3>
+
+<p>
+    <img src="/images/container-service-reminder.png">
+</p>
+
+<hr>
+
+<h3>Container: initializer</h3>
+
+{{code-snippet name="ember-generate-initializer-reminder.sh"}}
+
+<p>
+    <img src="/images/ember-generate-initializer-service-reminder-output.png" class="limited-width">
+</p>
+
+{{file-snippet path="app/initializers/reminder.js" snippet="testing-unit-reminder-initializer.js"}}
+
+<p>
+    <img src="/images/container-controller-reminder-injection.png">
+</p>
+
+<hr>
+
+<h3>Zoom in on test</h3>
+
+{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-reminder-service-test.js"}}
+
+<p>
+  {{test-link module="service:reminder" test="it exists"}}
+</p>
+
+<hr>
+
+<h3>Reminder Service</h3>
+
+<form {{action 'remind' message delay on="submit"}}>
+    <p>
+        <label>Reminder {{input classNames="input-mini" value=message placeholder="text"}}</label>
+    </p>
+    <p>
+        <label>Delay {{input type="range" min=100 max=5000 value=delay}}</label><br>
+    </p>
+    <p>
+        <button type="submit" class="btn">Remind me after {{delay}}ms</button>
+    </p>
+</form>
+
+<div class="columns">
+    <div class="one-half column">
+      {{file-snippet path="app/controllers/testing/unit.js" snippet="testing-unit-controller.js"}}
+    </div>
+    <div class="one-half column">
+      {{file-snippet path="app/templates/testing/unit.hbs" snippet="testing-unit-remind-form.hbs"}}
+    </div>
+</div>
+
+{{file-snippet path="app/services/reminder.js" snippet="testing-unit-reminder-service.js"}}
+
+{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-reminder-test-add.js"}}
+
+{{test-link module="service:reminder" test="adding a reminder adds a timer to reminders"}}
+
+<hr>
+
+<h3>Asynchronous Unit Test</h3>
+
+{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-asynchronous-unit-test.js"}}
+
+{{test-link module="service:reminder" test="reminder is called"}}
+
+<h3>Assignment</h3>
+
+{{#flash-message type="warn"}}
+  Write a unit test for `app/controllers/testing/unit.js` controller
+  <ol>
+      <li>Verify that adding a reminder via `this.remind` method calls `add` on reminder service</li>
+      <li>Bonus: verify that calling `remind` action on the controller calls `add` on reminder service</li>
+  </ol>
+{{/flash-message}}

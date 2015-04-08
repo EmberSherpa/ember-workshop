@@ -1,0 +1,9 @@
+<form {{action 'remind' message delay on="submit"}}>
+  <label>Reminder
+    {{input classNames="input-mini" value=message placeholder="text"}}
+  </label>
+  <label>Delay
+    {{input type="range" min=100 max=5000 value=delay}}
+  </label>
+  <button type="submit" class="btn">Remind me after {{delay}}ms</button>
+</form>
