@@ -1,11 +1,13 @@
 require('array.prototype.find');
+var bodyParser = require('body-parser');
 
 module.exports = function(app) {
   var express = require('express');
-  var productsRouter = express.Router();
+  var router = express.Router();
+  router.use(bodyParser.json());
+  router.use(bodyParser.urlencoded({ extended: true }));
 
-
-  productsRouter.get('/', function(req, res) {
+  router.get('/', function(req, res) {
     setTimeout(function(){
       res.send({
         'products': products
@@ -13,11 +15,11 @@ module.exports = function(app) {
     }, 750);
   });
 
-  productsRouter.post('/', function(req, res) {
-    res.status(201).end();
+  router.post('/', function(req, res) {
+    res.send(req.body).status(201).end();
   });
 
-  productsRouter.get('/:id', function(req, res) {
+  router.get('/:id', function(req, res) {
     var id = req.params.id;
     var product = products.find(function(product){
       return product.id === parseInt(id, 10);
@@ -30,7 +32,7 @@ module.exports = function(app) {
     res.status(404).end();
   });
 
-  productsRouter.put('/:id', function(req, res) {
+  router.put('/:id', function(req, res) {
     res.send({
       'products': {
         id: req.params.id
@@ -38,11 +40,11 @@ module.exports = function(app) {
     });
   });
 
-  productsRouter.delete('/:id', function(req, res) {
+  router.delete('/:id', function(req, res) {
     res.status(204).end();
   });
 
-  app.use('/api/products', productsRouter);
+  app.use('/api/products', router);
 };
 
 var products = [

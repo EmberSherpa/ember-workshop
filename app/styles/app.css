@@ -15,7 +15,6 @@ hr {
 }
 
 .file-snippet {
-  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 3px;
   border: solid 1px #bac6d3;
@@ -32,3 +31,12 @@ hr {
 .flash ol {
   margin-left: 20px;
 }
+
+.lead {
+  margin-bottom: 20px;
+}
+
+body {
+  margin-bottom: 20px;
+}
+

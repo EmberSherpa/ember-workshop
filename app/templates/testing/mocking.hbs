@@ -1,0 +1,73 @@
+{{testing-nav}}
+
+<p class="lead">Your routes need data and your tests do too.</p>
+
+<hr>
+
+<div class="columns">
+    <div class="one-third column">
+        <h3>Example</h3>
+        <ul>
+          {{#each model.products as |product|}}
+              <li class="product-item">{{product.title}}</li>
+          {{/each}}
+        </ul>
+    </div>
+    <div class="two-thirds column">
+      {{file-snippet path="routes/testing/mocking.js" snippet="testing-mocking-route.js"}}
+      {{file-snippet path="templates/testing/mocking.hbs" snippet="testing-mocking-example.hbs"}}
+    </div>
+</div>
+
+<hr>
+
+<h3><a href="https://github.com/trek/pretender" target="_blank">Pretender</a></h3>
+
+{{code-snippet name="testing-mocking-pretender.js"}}
+
+<hr>
+
+<h3>In a test</h3>
+
+{{file-snippet path="tests/acceptance/testing-mocking-test.js" snippet="testing-mocking-test.js"}}
+
+<p>
+  {{test-link module='Acceptance: TestingMocking' test='retrieves data and shows it in a list'}}
+</p>
+
+<hr>
+
+<h3>Write your own test</h3>
+
+{{#flash-message type="warn"}}
+  Write a test that shows your top 3 products in a list.
+{{/flash-message}}
+
+<hr>
+
+<h3>Sending data to the API</h3>
+
+<div class="columns">
+    <div class="one-third column">
+        <h4>Create a product</h4>
+        <form class="new-product" {{action "createProduct" on="submit"}}>
+            <p>
+                <label>Title {{input classNames="title" value=title type="text"}}</label>
+            </p>
+            <p>
+                <label>Price {{input classNames="price" value=price type="text"}}</label>
+            </p>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="two-thirds column">
+      {{file-snippet path="controllers/testing/mocking.js" snippet="testing-mocking-controller.js"}}
+    </div>
+</div>
+
+{{#flash-message type="warn"}}
+  Write a test that creates a product and verifies that it's added to the list.
+{{/flash-message}}
+
+<hr>
+

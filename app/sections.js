@@ -8,6 +8,10 @@ export default [
         route: 'acceptance'
       },
       {
+        title: 'Mocking API Requests',
+        route: 'mocking'
+      },
+      {
         title: 'Unit',
         route: 'unit'
       }
