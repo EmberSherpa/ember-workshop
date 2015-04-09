@@ -1,0 +1,74 @@
+{{testing-nav}}
+
+<p class="lead">Unit test components in isolation.</p>
+
+<hr>
+<div class="columns">
+  <div class="one-half column">
+    {{file-snippet path="app/templates/testing/components.hbs" snippet="testing-components-toggle-button.hbs"}}
+  </div>
+  <div class="one-half column">
+    {{#toggle-button is-on=isOn}}
+        Click me!
+    {{/toggle-button}}
+  </div>
+</div>
+
+<hr>
+
+<h3>Generated test</h3>
+
+{{file-snippet classNames="margin-bottom" path="tests/unit/components/toggle-button-test.js" snippet="testing-components-generated-test.js"}}
+
+{{test-link module="component:toggle-button" test="it renders"}}
+
+
+<hr>
+
+<h3>Testing initial state</h3>
+
+{{file-snippet classNames="margin-bottom" path="tests/unit/components/toggle-button-test.js" snippet="testing-components-green-when-on-test.js"}}
+
+{{test-link module="component:toggle-button" test='button is green when on'}}
+
+<hr>
+
+<h3>Change the state and check for result</h3>
+
+{{file-snippet path="tests/unit/components/toggle-button-test.js" snippet="testing-components-changing-state.js"}}
+
+<p>
+    <img src="/images/assertion-fail-run-loop-not-started.png">
+</p>
+
+{{#flash-message classNames="margin-bottom" type="error"}}
+  Assertion Failed: You have turned on testing mode, which disabled the run-loop's autorun. You will need to wrap any code with asynchronous side-effects in a run.
+{{/flash-message}}
+
+<hr>
+
+{{code-snippet name="testing-components-cause-of-run-loop-assertion.js"}}
+
+<h3>Why did ^^ cause that assertion to fail?</h3>
+
+{{file-snippet path="app/components/toggle-button.js" snippet="testing-components-toggle-button.js"}}
+
+<hr>
+
+<h3>Wrap async triggering code in Ember.run</h3>
+
+{{code-snippet classNames="margin-bottom" name="testing-components-wrapped-in-run.js"}}
+
+{{#flash-message type="warn"}}
+  <ol>
+      <li>Replace `skip` from the test</li>
+      <li>Fix the test by wrapping it in Ember.run</li>
+  </ol>
+{{/flash-message}}
+
+<h3>Testing Actions</h3>
+
+{{file-snippet classNames="margin-bottom" path="tests/unit/components/toggle-button-test.js" snippet="testing-components-on-click.js"}}
+
+{{test-link module="component:toggle-button" test="on-click is triggered when clicked"}}
+

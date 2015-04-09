@@ -68,7 +68,7 @@
     </p>
 </form>
 
-<div class="columns">
+<div class="columns margin-bottom">
     <div class="one-half column">
       {{file-snippet path="app/controllers/testing/unit.js" snippet="testing-unit-controller.js"}}
     </div>
@@ -77,9 +77,9 @@
     </div>
 </div>
 
-{{file-snippet path="app/services/reminder.js" snippet="testing-unit-reminder-service.js"}}
+{{file-snippet classNames="margin-bottom" path="app/services/reminder.js" snippet="testing-unit-reminder-service.js"}}
 
-{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-reminder-test-add.js"}}
+{{file-snippet classNames="margin-bottom" path="tests/unit/services/reminder-test.js" snippet="testing-unit-reminder-test-add.js"}}
 
 {{test-link module="service:reminder" test="adding a reminder adds a timer to reminders"}}
 
@@ -87,9 +87,11 @@
 
 <h3>Asynchronous Unit Test</h3>
 
-{{file-snippet path="tests/unit/services/reminder-test.js" snippet="testing-unit-asynchronous-unit-test.js"}}
+{{file-snippet classNames="margin-bottom" path="tests/unit/services/reminder-test.js" snippet="testing-unit-asynchronous-unit-test.js"}}
 
 {{test-link module="service:reminder" test="reminder is called"}}
+
+<hr>
 
 <h3>Assignment</h3>
 
@@ -100,3 +102,7 @@
       <li>Bonus: verify that calling `remind` action on the controller calls `add` on reminder service</li>
   </ol>
 {{/flash-message}}
+
+<hr>
+
+{{#link-to "testing.components" class="btn btn-primary"}}Next: Testing Components{{/link-to}}

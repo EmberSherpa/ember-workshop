@@ -44,11 +44,11 @@
   {{/if}}
 </p>
 
-{{file-snippet path="templates/testing/acceptance.hbs" snippet="testing-acceptance-test-first-test.hbs"}}
+{{file-snippet classNames="margin-bottom" path="templates/testing/acceptance.hbs" snippet="testing-acceptance-test-first-test.hbs"}}
 
-{{file-snippet path="controllers/testing/acceptance.js" snippet="testing-acceptance-test-first-test-controller.js"}}
+{{file-snippet classNames="margin-bottom" path="controllers/testing/acceptance.js" snippet="testing-acceptance-test-first-test-controller.js"}}
 
-{{file-snippet path="tests/acceptance/testing-acceptance-test.js" snippet="testing-acceptance-test-first-test.js"}}
+{{file-snippet classNames="margin-bottom" path="tests/acceptance/testing-acceptance-test.js" snippet="testing-acceptance-test-first-test.js"}}
 
 {{#flash-message type="warn"}}
   <ol>
@@ -57,12 +57,15 @@
   </ol>
 {{/flash-message}}
 
+<hr>
+
 <h4>Write your first test</h4>
 
 <p>
     <label>My Input {{input classNames="my-first-test" value=my-input-value}}</label>
     <span class="my-output">{{my-input-value}}</span>
 </p>
+
 
 {{code-snippet name="testing-acceptance-test-write-test.hbs"}}
 
@@ -72,8 +75,6 @@
   Write a test that will test for presence of inputted value in .my-output class.
 {{/flash-message}}
 
-<br>
+<hr>
 
 {{#link-to "testing.mocking" class="btn btn-primary"}}Next: Mocking API Requests{{/link-to}}
-
-<br>

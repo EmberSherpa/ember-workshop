@@ -15,7 +15,6 @@ hr {
 }
 
 .file-snippet {
-  margin-bottom: 20px;
   border-radius: 3px;
   border: solid 1px #bac6d3;
 }
@@ -46,4 +45,8 @@ img {
 
 .limited-width {
   max-width: 500px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
 }

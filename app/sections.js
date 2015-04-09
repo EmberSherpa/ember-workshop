@@ -1,8 +1,12 @@
 export default [
   {
-    route: 'testing',
     title: 'Testing',
+    route: 'testing',
     routes: [
+      {
+        title: 'Getting Started',
+        route: 'getting-started'
+      },
       {
         title: 'Acceptance',
         route: 'acceptance'
@@ -14,15 +18,10 @@ export default [
       {
         title: 'Unit',
         route: 'unit'
-      }
-    ]
-  },
-  {
-    route: "components",
-    title: "Components",
-    routes: [
+      },
       {
-
+        title: "Components",
+        route: "components"
       }
     ]
   }

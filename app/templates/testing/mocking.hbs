@@ -14,7 +14,7 @@
         </ul>
     </div>
     <div class="two-thirds column">
-      {{file-snippet path="routes/testing/mocking.js" snippet="testing-mocking-route.js"}}
+      {{file-snippet classNames="margin-bottom" path="routes/testing/mocking.js" snippet="testing-mocking-route.js"}}
       {{file-snippet path="templates/testing/mocking.hbs" snippet="testing-mocking-example.hbs"}}
     </div>
 </div>
@@ -65,9 +65,14 @@
     </div>
 </div>
 
-{{#flash-message type="warn"}}
-  Write a test that creates a product and verifies that it's added to the list.
-{{/flash-message}}
-
 <hr>
 
+<h3>Exercise</h3>
+
+<p>
+  {{#flash-message type="warn"}}
+      Write a test that creates a product and verifies that it's added to the list.
+  {{/flash-message}}
+</p>
+
+{{#link-to "testing.unit" class="btn btn-primary"}}Next: Unit Testing{{/link-to}}
