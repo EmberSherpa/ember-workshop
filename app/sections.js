@@ -4,8 +4,8 @@ export default [
     route: 'testing',
     routes: [
       {
-        title: 'Getting Started',
-        route: 'getting-started'
+        title: 'Tools',
+        route: 'tools'
       },
       {
         title: 'Acceptance',
